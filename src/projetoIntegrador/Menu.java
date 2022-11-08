@@ -1,12 +1,15 @@
 package projetoIntegrador;
 
-import projetoIntegrador.controller.UsuarioController;
+
+import projetoIntegrador.model.Veiculo;
 
 public class Menu {
 
     public static void main(String[] args) {
-    UsuarioController usuario = new UsuarioController();
 
+        Veiculo v = new Veiculo(1, "123-m23", "vermelho", "gol", 2023, "flex" );
+
+        v.visualizar();
      }
     }
 

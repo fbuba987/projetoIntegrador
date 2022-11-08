@@ -1,6 +1,6 @@
 package projetoIntegrador.model;
 
-public abstract class Veiculo {
+public class Veiculo {
 
     private  int id;
     private String placa;
@@ -66,7 +66,30 @@ public abstract class Veiculo {
         this.combustivel = combustivel;
     }
 
-    public void listar(){
+    public void visualizar(){
+
+        String id = "";
+
+        switch (this.id){
+            case 1:
+                id = "Carro";
+                break;
+
+            case 2:
+                id = "Moto";
+                break;
+        }
+        //testando
+        System.out.println("********************************* teste *********************");
+        System.out.println("Veiculos");
+        System.out.println("ID: " + this.id);
+        System.out.println("Placa: " + this.placa);
+        System.out.println("Cor: " + this.cor);
+        System.out.println("Modelo: " + this.modelo);
+        System.out.println("Ano: " + this.ano);
+        System.out.println("Combustivel: " + this.combustivel);
+
+
 
     }
 

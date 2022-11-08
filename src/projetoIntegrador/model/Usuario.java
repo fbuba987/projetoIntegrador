@@ -8,7 +8,7 @@ public class Usuario {
    private String nome;
    private String username;
    private String senha;
-   private int tipo;
+
 
     public ArrayList<Usuario> getListUser() {
         return listUser;
@@ -20,12 +20,11 @@ public class Usuario {
 
     private    ArrayList<Usuario> listUser = new ArrayList<Usuario>();
 
-    public Usuario(long in_user, String nome, String username, String senha, int tipo) {
+    public Usuario(long in_user, String nome, String username, String senha) {
         this.in_user = in_user;
         this.nome = nome;
         this.username = username;
         this.senha = senha;
-        this.tipo = tipo;
 
 
     }

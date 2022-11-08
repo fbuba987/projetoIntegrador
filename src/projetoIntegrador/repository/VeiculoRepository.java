@@ -1,5 +1,7 @@
 package projetoIntegrador.repository;
 
+import projetoIntegrador.model.Veiculo;
+
 public interface VeiculoRepository {
 
     // CRUD de veiculos

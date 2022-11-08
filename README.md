@@ -24,7 +24,7 @@
 ## [Fluxograma e Diagrama de classe](https://docs.github.com/pt/get-started/using-git/pushing-commits-to-a-remote-repository)
 
 
-## [Lidar com erros "non-fast-forward"](https://docs.github.com/pt/get-started/using-git/dealing-with-non-fast-forward-errors)
+## [Lidar com erros "non-fast-forward"]([https://docs.github.com/pt/get-started/using-git/dealing-with-non-fast-forward-errors](https://docs.github.com/pt/get-started/using-git/pushing-commits-to-a-remote-repository))
 
 Se outra pessoa tiver feito push no mesmo branch que você, o Git não poderá fazer push das alterações
 

@@ -1,6 +1,8 @@
 package projetoIntegrador.model;
 
-public class Carro extends Veiculo{
+import projetoIntegrador.repository.VeiculoRepository;
+
+public class Carro extends Veiculo implements VeiculoRepository {
 
         private String tracao;
         private float motor;
@@ -11,6 +13,21 @@ public class Carro extends Veiculo{
             this.tracao = tracao;
             this.motor = motor;
         }
+
+    @Override
+    public void listarVeiculos() {
+        
     }
+
+    @Override
+    public void cadastrar() {
+
+    }
+
+    @Override
+    public void deletar() {
+
+    }
+}
 
 

@@ -1,6 +1,6 @@
 package projetoIntegrador.model;
 
-public class Veiculo {
+public abstract class Veiculo {
 
     private  int id;
     private String placa;

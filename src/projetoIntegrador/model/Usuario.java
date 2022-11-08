@@ -1,6 +1,6 @@
 package projetoIntegrador.model;
 
-import java.util.Date;
+import java.util.ArrayList;
 
 public class Usuario {
 
@@ -9,6 +9,16 @@ public class Usuario {
    private String username;
    private String senha;
    private int tipo;
+
+    public ArrayList<Usuario> getListUser() {
+        return listUser;
+    }
+
+    public void setListUser(ArrayList<Usuario> listUser) {
+        this.listUser = listUser;
+    }
+
+    private    ArrayList<Usuario> listUser = new ArrayList<Usuario>();
 
     public Usuario(long in_user, String nome, String username, String senha, int tipo) {
         this.in_user = in_user;
@@ -20,7 +30,32 @@ public class Usuario {
 
     }
 
-        public void listar(){}
-        public void adicionar(){}
-        public void deletar(){}
+        public void adicionar(Usuario user){
+            String result = "";
+            if (user != null)
+            {
+                listUser.add(user);
+                result = "Usuário adicionado com sucesso";
+            }
+            else
+            {
+                result = "Nenhum Usuario adicionado!";
+            }
+            System.out.println(result);
+
+        }
+        public boolean validar(String username2, String password){
+        boolean validador = false;
+            for (Usuario use : getListUser() )
+            {
+                if (use.username == username2 && use.senha == password)
+                {
+                    validador = true;
+                }
+
+            }
+            return validador;
+
+
+        }
 }

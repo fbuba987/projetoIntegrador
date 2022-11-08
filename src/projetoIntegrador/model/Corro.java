@@ -1,6 +1,7 @@
 package projetoIntegrador.model;
 
-public class Corro extends Veiculo{
+public class
+Corro extends Veiculo{
 
     private String tração;
     private float motor;

@@ -7,15 +7,15 @@ public class Veiculo {
     private String cor;
     private String modelo;
     private int ano;
-    private String combostivel;
+    private String combustivel;
 
-    public Veiculo(int id, String placa, String cor, String modelo, int ano, String combostivel) {
+    public Veiculo(int id, String placa, String cor, String modelo, int ano, String combustivel) {
         this.id = id;
         this.placa = placa;
         this.cor = cor;
         this.modelo = modelo;
         this.ano = ano;
-        this.combostivel = combostivel;
+        this.combustivel = combustivel;
     }
 
     public int getId() {
@@ -58,12 +58,12 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public String getCombostivel() {
-        return combostivel;
+    public String getCombustivel() {
+        return combustivel;
     }
 
-    public void setCombostivel(String combostivel) {
-        this.combostivel = combostivel;
+    public void setCombustivel(String combustivel) {
+        this.combustivel = combustivel;
     }
 
     public void listar(){

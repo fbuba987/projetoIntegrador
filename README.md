@@ -41,4 +41,10 @@ Se outra pessoa tiver feito push no mesmo branch que você, o Git não poderá f
  Ou você pode usar ```git pull``` para executar ambos os comandos ao mesmo tempo:
  
     git pull origin YOUR_BRANCH_NAME
+    
+    
+    
+  ## O comando no IntelliJ para entrar no ```commit```:
+  
+        command + k 
 

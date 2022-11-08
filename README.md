@@ -21,7 +21,7 @@
 
 # Tema: E-Commerce
 
-## [Fluxograma e Diagrama de classe](https://docs.github.com/pt/get-started/using-git/pushing-commits-to-a-remote-repository)
+## [Fluxograma e Diagrama de classe](https://app.diagrams.net/#G1qtYpw1XGNdBEOSNyprEOT4ik0TshP5UP)
 
 
 ## [Lidar com erros "non-fast-forward"](https://docs.github.com/pt/get-started/using-git/pushing-commits-to-a-remote-repository)
@@ -41,4 +41,10 @@ Se outra pessoa tiver feito push no mesmo branch que você, o Git não poderá f
  Ou você pode usar ```git pull``` para executar ambos os comandos ao mesmo tempo:
  
     git pull origin YOUR_BRANCH_NAME
+    
+    
+    
+  ## O comando no IntelliJ para entrar no ```commit```:
+  
+        command + k 
 

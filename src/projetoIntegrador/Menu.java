@@ -1,4 +1,4 @@
 package projetoIntegrador;
 
-public class TestaPrograma {
+public class Menu {
 }

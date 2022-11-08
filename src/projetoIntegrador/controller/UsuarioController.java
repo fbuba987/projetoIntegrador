@@ -5,7 +5,7 @@ import projetoIntegrador.model.Usuario;
 public class UsuarioController {
     public Usuario user;
 
-    public void adicionarUsuario(long in_user, String nome, String username, String senha, int tipo)
+    public void adicionarUsuario(long in_user, String nome, String username, String senha)
     {
         user = new Usuario(in_user,nome,username,senha);
         user.adicionar(user);

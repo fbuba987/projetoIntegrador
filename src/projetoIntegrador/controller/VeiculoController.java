@@ -31,21 +31,20 @@ public class VeiculoController implements VeiculoRepository {
     }
 
     @Override
-    public void listarTodas() {
-        for (var veiculo : listarVeiculo) {
-            veiculo.visualizar();
-        }
+    public void listaVeiculo() {
+
+
+    }
+
+    @Override
+    public void login() {
+
     }
 
     @Override
     public void cadastrar(Veiculo veiculo) {
         listarVeiculo.add(veiculo);
         System.out.println("\nA Conta número: " + veiculo.getId() + " foi criada com sucesso!");
-
-    }
-
-    @Override
-    public void atualizar(Veiculo veiculo) {
 
     }
 

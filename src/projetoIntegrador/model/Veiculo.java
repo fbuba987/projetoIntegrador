@@ -1,5 +1,7 @@
 package projetoIntegrador.model;
 
+import javax.swing.plaf.IconUIResource;
+
 public abstract class Veiculo {
 
     private  int id;
@@ -67,6 +69,12 @@ public abstract class Veiculo {
     }
 
     public void listar(){
+        System.out.println(getId());
+        System.out.println("Placa: "+getPlaca());
+        System.out.println("Modelo: "+getModelo());
+        System.out.println("Ano"+getAno());
+        System.out.println("Cor: "+getCor());
+        System.out.println("Combustivel: " + getCombustivel());
 
     }
 

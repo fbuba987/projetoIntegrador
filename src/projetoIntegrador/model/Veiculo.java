@@ -1,21 +1,21 @@
 package projetoIntegrador.model;
 
-public class Veiculo {
+public abstract class Veiculo {
 
     private  int id;
     private String placa;
     private String cor;
     private String modelo;
     private int ano;
-    private String combostivel;
+    private String combustivel;
 
-    public Veiculo(int id, String placa, String cor, String modelo, int ano, String combostivel) {
+    public Veiculo(int id, String placa, String cor, String modelo, int ano, String combustivel) {
         this.id = id;
         this.placa = placa;
         this.cor = cor;
         this.modelo = modelo;
         this.ano = ano;
-        this.combostivel = combostivel;
+        this.combustivel = combustivel;
     }
 
     public int getId() {
@@ -58,15 +58,36 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public String getCombostivel() {
-        return combostivel;
+    public String getCombustivel() {
+        return combustivel;
     }
 
-    public void setCombostivel(String combostivel) {
-        this.combostivel = combostivel;
+    public void setCombustivel(String combustivel) {
+        this.combustivel = combustivel;
     }
 
-    public void listar(){
+    public void visualizar(){
+        String id = "";
+
+        switch (this.id){
+            case 1:
+                id = "Carro";
+                break;
+
+            case 2:
+                id = "Moto";
+                break;
+        }
+        //testando
+        System.out.println("********************************* teste *********************");
+        System.out.println("Veiculos à alugar");
+        System.out.println("ID: " + id);
+        System.out.println("Placa: " + this.placa);
+        System.out.println("Cor: " + this.cor);
+        System.out.println("Modelo: " + this.modelo);
+        System.out.println("Ano: " + this.ano);
+        System.out.println("Combustivel: " + this.combustivel);
+
 
     }
 

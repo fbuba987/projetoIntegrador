@@ -4,6 +4,7 @@ package projetoIntegrador;
 import projetoIntegrador.controller.VeiculoController;
 import projetoIntegrador.model.Carro;
 import projetoIntegrador.model.Moto;
+import projetoIntegrador.model.Veiculo;
 import projetoIntegrador.util.Cores;
 
 import java.util.Scanner;
@@ -25,10 +26,6 @@ public class Menu {
 
     // Instância da Classe ContaController
     VeiculoController contas = new VeiculoController();
-
-
-    Carro c1 = new Carro(123, "MQ-2540", "Prata", "Fusca", 2021, "Etanol", "Stock car", 1.0f);
-    Moto m1 = new Moto(342, "AG-567", "Branca", "Yamaha", 2022, "Gasolina", "A colocar", "A colocar");
 
 
 
@@ -85,19 +82,32 @@ public class Menu {
                 //if( ) {
             }
             case 2 -> {
-                System.out.println("Digite o seu nome ");
+                System.out.println("\nDigite o seu nome ");
                 read.skip("\\R?");
                 nome = read.nextLine();
-                System.out.println("Digite o nome de usuario ");
+                System.out.println("\nDigite o nome de usuario ");
                 read.skip("\\R?");
                 usuario = read.nextLine();
-                System.out.println("Digite sua senha ");
+                System.out.println("\nDigite sua senha ");
                 read.skip("\\R?");
                 senha = read.nextLine();
             }
             case 3 -> {
-                System.out.println();
+                System.out.println("\nLista de veiculos");
+
+                contas.listaVeiculo();
             }
+            case 4 -> {
+                System.out.println("\nProcurar modelo");
+            }
+            case 5 -> {
+                System.out.println("\nAlugar carro");
+            }
+            case 6 -> {
+                System.out.println("\nSair");
+            }
+
+
         }
 
 

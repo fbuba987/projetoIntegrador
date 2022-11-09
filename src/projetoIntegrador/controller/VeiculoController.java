@@ -7,32 +7,46 @@ import java.util.ArrayList;
 
 public class VeiculoController implements VeiculoRepository {
 
-    private ArrayList<Veiculo> listarVeiculo = new ArrayList<Veiculo>();
+    private static ArrayList<Veiculo> listarVeiculo = new ArrayList<Veiculo>();
+
+    public  Object newId() {
+        return listarVeiculo.size() + 1;
+    }
 
     // Procurar modelo por ID
     @Override
-    public void procurarPorModelo(int id) {
+    public void procurarPorModelo(String modelo) {
 
-        var veiculo = buscarNaCollection(id);
+        var veiculo = buscarNaCollection(modelo);
 
         if (veiculo != null)
             veiculo.visualizar();
         else
-            System.out.println("\nO modelo: " + id + " não foi encontrada!");
+            System.out.println("\nO modelo: " + modelo + " não foi encontrada!");
+
+
 
     }
-
     /**
      * Método para buscar a Conta na Collection
      * */
-    public Veiculo buscarNaCollection(int id) {
+    public Veiculo buscarNaCollection(String modelo) {
+        for (var veiculo : listarVeiculo)
+        {
+            if (veiculo.getModelo().equalsIgnoreCase(modelo) == true)
+            {
+                veiculo.visualizar();
+            }
+        }
 
         return  null;
     }
 
     @Override
     public void listaVeiculo() {
-
+        for (var conta : listarVeiculo) {
+            conta.visualizar();
+        }
 
     }
 

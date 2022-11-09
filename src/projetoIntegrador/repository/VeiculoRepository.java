@@ -6,7 +6,7 @@ public interface VeiculoRepository {
 
     // CRUD da Conta
     public void listaVeiculo();
-    public  void procurarPorModelo(int id);
+    public  void procurarPorModelo(String modelo);
     public void login();
     public void cadastrar(Veiculo veiculo);
     public void deletar(int id);

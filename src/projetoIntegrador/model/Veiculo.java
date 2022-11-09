@@ -3,6 +3,13 @@ package projetoIntegrador.model;
 public abstract class Veiculo {
 
     private  int id;
+     private float valor;
+
+
+    public void setValor(float valor) {
+        this.valor = valor;
+    }
+
     private String placa;
     private String cor;
     private String modelo;
@@ -16,6 +23,7 @@ public abstract class Veiculo {
         this.modelo = modelo;
         this.ano = ano;
         this.combustivel = combustivel;
+        this.valor = valor;
     }
 
     public int getId() {

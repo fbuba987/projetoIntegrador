@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class VeiculoController implements VeiculoRepository {
 
-    private ArrayList<Veiculo> listaVeiculo = new ArrayList<Veiculo>();
+    private ArrayList<Veiculo> listarVeiculo = new ArrayList<Veiculo>();
 
     // Procurar modelo por ID
     @Override
@@ -22,6 +22,9 @@ public class VeiculoController implements VeiculoRepository {
 
     }
 
+    /**
+     * Método para buscar a Conta na Collection
+     * */
     public Veiculo buscarNaCollection(int id) {
 
         return  null;
@@ -29,11 +32,15 @@ public class VeiculoController implements VeiculoRepository {
 
     @Override
     public void listarTodas() {
-
+        for (var veiculo : listarVeiculo) {
+            veiculo.visualizar();
+        }
     }
 
     @Override
     public void cadastrar(Veiculo veiculo) {
+        listarVeiculo.add(veiculo);
+        System.out.println("\nA Conta número: " + veiculo.getId() + " foi criada com sucesso!");
 
     }
 

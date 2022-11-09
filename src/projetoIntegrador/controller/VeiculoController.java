@@ -12,7 +12,7 @@ public class VeiculoController implements VeiculoRepository {
     // Procurar modelo por ID
     @Override
     public void procurarPorModelo(int id) {
-        /*
+
         var veiculo = buscarNaCollection(id);
 
         if (veiculo != null)
@@ -20,12 +20,11 @@ public class VeiculoController implements VeiculoRepository {
         else
             System.out.println("\nO modelo: " + id + " não foi encontrada!");
 
-         */
-
-
     }
 
-    private void buscarNaCollection(int id) {
+    public Veiculo buscarNaCollection(int id) {
+
+        return  null;
     }
 
     @Override

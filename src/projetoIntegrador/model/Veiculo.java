@@ -12,7 +12,7 @@ public abstract class Veiculo {
 
     private String placa;
     private String cor;
-    private String modelo;
+    String modelo;
     private int ano;
     private String combustivel;
 

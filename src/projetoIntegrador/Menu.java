@@ -4,16 +4,19 @@ package projetoIntegrador;
 import projetoIntegrador.controller.VeiculoController;
 import projetoIntegrador.model.Carro;
 import projetoIntegrador.model.Moto;
-import projetoIntegrador.model.Veiculo;
 import projetoIntegrador.util.Cores;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
 
     public static void main(String[] args) {
 
+        // Instância da Classe ContaController
+        VeiculoController veiculos = new VeiculoController();
 
+        Carro c1 = new Carro(123, "MQ-5423", "Amarelo", "Yunday", 2022, "Etanol", "Sei la", 1.0f);
 
     Scanner read = new Scanner(System.in);
 
@@ -26,7 +29,6 @@ public class Menu {
 
     // Instância da Classe ContaController
     VeiculoController contas = new VeiculoController();
-
 
 
 
@@ -53,19 +55,30 @@ public class Menu {
         System.out.println("     Digite a opção desejada          " + Cores.TEXT_RESET);
 
         entrada = read.nextInt();
-
-
-        while (entrada < 1|| entrada > 6) { //Numero invalido
-            if (entrada > 6 || entrada <1) {
-                System.out.println("Opção invalida. Favor inserir um numero valido");
+            try {
                 entrada = read.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("\nDigite valores inteiros!");
+                read.nextLine();
+                entrada = 0;
             }
-            if (entrada == 6) { //Sair do programa
-                System.out.println(" Até breve ");
+
+            if (entrada == 6) {
+                System.out.println(Cores.TEXT_BLUE_BOLD_BRIGHT + "\nEasy Facility LTDA \nLocação de veículos!");
                 read.close();
                 System.exit(0);
             }
-        }
+//        for(int i = 0; i < 6; i++) { //Numero invalido
+//            if (entrada > 6 || entrada <1) {
+//                System.out.println("Opção invalida. Favor inserir um numero valido");
+//                entrada = read.nextInt();
+//            }
+//            if (entrada == 6) { //Sair do programa
+//                System.out.println(" Até breve ");
+//                read.close();
+//                System.exit(0);
+//            }
+//        }
 
 
 
@@ -74,28 +87,22 @@ public class Menu {
             case 1 -> {
                 System.out.println("\nDigite o nome de usuario ");
                 read.skip("\\R?");
-                usuario = read.nextLine();
                 System.out.println("\nDigite sua senha ");
                 read.skip("\\R?");
-                senha = read.nextLine();
                 //usuario.validarUsuario(usuario, senha);
                 //if( ) {
             }
             case 2 -> {
                 System.out.println("\nDigite o seu nome ");
                 read.skip("\\R?");
-                nome = read.nextLine();
                 System.out.println("\nDigite o nome de usuario ");
                 read.skip("\\R?");
-                usuario = read.nextLine();
                 System.out.println("\nDigite sua senha ");
                 read.skip("\\R?");
-                senha = read.nextLine();
             }
             case 3 -> {
-                System.out.println("\nLista de veiculos");
-
-                contas.listaVeiculo();
+                System.out.println(Cores.TEXT_BLUE_BOLD_BRIGHT  + "\nLista de veiculos");
+                veiculos.listaVeiculo();
             }
             case 4 -> {
                 System.out.println("\nProcurar modelo");

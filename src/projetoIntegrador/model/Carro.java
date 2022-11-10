@@ -1,5 +1,7 @@
 package projetoIntegrador.model;
 
+import java.util.ArrayList;
+
 public class Carro extends Veiculo{
 
     private String tracao;

@@ -27,6 +27,12 @@ public class VeiculoController implements VeiculoRepository {
 
 
     }
+
+    @Override
+    public void login(Veiculo veiculo) {
+
+    }
+
     /**
      * Método para buscar a Conta na Collection
      * */
@@ -42,19 +48,20 @@ public class VeiculoController implements VeiculoRepository {
         return  null;
     }
 
+    /**
+     *  Método Listar todas os veiculos
+     * */
     @Override
     public void listaVeiculo() {
-        for (var conta : listarVeiculo) {
-            conta.visualizar();
+        for (var veiculo : listarVeiculo) {
+            veiculo.visualizar();
         }
 
     }
 
-    @Override
-    public void login() {
-
-    }
-
+    /**
+     * Método Cadastrar no Veiculos
+     * */
     @Override
     public void cadastrar(Veiculo veiculo) {
         listarVeiculo.add(veiculo);
@@ -63,12 +70,24 @@ public class VeiculoController implements VeiculoRepository {
     }
 
     @Override
-    public void deletar(int id) {
+    public void deletar(String modelo) {
+        var veiculo = buscarNaCollection(modelo);
+
+        if (veiculo != null) {
+            if(listarVeiculo.remove(veiculo) == true)
+                System.out.println("\nA Conta numero: " + modelo + " foi deletada com sucesso!");
+        }else
+            System.out.println("\nA Conta numero: " + modelo + " não foi encontrada!");
 
     }
 
     @Override
-    public void alugar(int id, float valor) {
+    public void alugar(String modelo, float valor) {
 
+    }
+
+
+    public ArrayList<Veiculo> gerarModelo() {
+        return listarVeiculo;
     }
 }

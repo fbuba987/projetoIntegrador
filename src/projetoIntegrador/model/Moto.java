@@ -2,14 +2,14 @@ package projetoIntegrador.model;
 
 public class Moto extends Veiculo{
 
-    private String  capacete;
+    private int  capacete;
     private String cilindradas;
 
-    public String getCapacete() {
+    public int getCapacete() {
         return capacete;
     }
 
-    public void setCapacete(String capacete) {
+    public void setCapacete(int capacete) {
         this.capacete = capacete;
     }
 
@@ -21,8 +21,8 @@ public class Moto extends Veiculo{
         this.cilindradas = cilindradas;
     }
 
-    public Moto(int id, String placa, String cor, String modelo, int ano, String combustivel, String capacete, String cilindradas) {
-        super(id, placa, cor, modelo, ano, combustivel);
+    public Moto(int id, String placa, String cor, String modelo,float valor,int ano, int capacete, String cilindradas,int status) {
+        super(id, placa, cor, modelo, valor, ano, status);
 
         this.capacete  = capacete;
         this.cilindradas = cilindradas;

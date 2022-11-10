@@ -1,6 +1,6 @@
 package projetoIntegrador.model;
 
-import javax.swing.plaf.IconUIResource;
+import projetoIntegrador.util.Cores;
 
 public abstract class Veiculo {
 
@@ -8,16 +8,18 @@ public abstract class Veiculo {
     private String placa;
     private String cor;
     private String modelo;
+    private float valor;
     private int ano;
-    private String combustivel;
+    private int status;
 
-    public Veiculo(int id, String placa, String cor, String modelo, int ano, String combustivel) {
+    public Veiculo(int id, String placa, String cor, String modelo, float valor, int ano, int status) {
         this.id = id;
         this.placa = placa;
         this.cor = cor;
         this.modelo = modelo;
+        this.valor = valor;
         this.ano = ano;
-        this.combustivel = combustivel;
+        this.status = status;
     }
 
     public int getId() {
@@ -44,6 +46,14 @@ public abstract class Veiculo {
         this.cor = cor;
     }
 
+    public float getValor() {
+        return valor;
+    }
+
+    public void setValor(float valor) {
+        this.valor = valor;
+    }
+
     public String getModelo() {
         return modelo;
     }
@@ -60,12 +70,22 @@ public abstract class Veiculo {
         this.ano = ano;
     }
 
-    public String getCombustivel() {
-        return combustivel;
+    public int getStatus() {
+        return status;
+    }
+    public String getStatusliteral() {
+        if(getStatus() == 0)
+        {
+            return Cores.TEXT_GREEN+"Disponivel";
+        }
+        else
+        {
+            return Cores.TEXT_RED+"Idisponivel";
+        }
     }
 
-    public void setCombustivel(String combustivel) {
-        this.combustivel = combustivel;
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public void listar(){
@@ -74,9 +94,13 @@ public abstract class Veiculo {
         System.out.println("Modelo: "+getModelo());
         System.out.println("Ano"+getAno());
         System.out.println("Cor: "+getCor());
-        System.out.println("Combustivel: " + getCombustivel());
+        if (getStatus() == 0)
+            System.out.println("Status:"+ getStatusliteral());
+        else
+            System.out.println("Status: "+getStatusliteral());
 
     }
+
 
 }
 

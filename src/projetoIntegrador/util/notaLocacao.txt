@@ -1,0 +1,7 @@
+monza                                         NOTA FISCAL                                     
+
+
+Modelo : monza
+ Valor Diária: 3.0
+ Data de Saída : 23
+ Data de Entrega : 22

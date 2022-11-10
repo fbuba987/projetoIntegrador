@@ -11,5 +11,6 @@ public interface VeiculoRepository {
     // CRUD de veiculos
     public void cadastrar(Veiculo veiculo);
     public void deletar(Veiculo veiculo);
+    public void pesquisar(String modelo);
 
 }

@@ -9,9 +9,9 @@ public class UsuarioController {
 
     private ArrayList<Usuario>listUser=new ArrayList<Usuario>();
 
-    public boolean adicionarUsuario( String nome, String username, String senha)
+    public boolean adicionarUsuario( String nome, String username, String senha,int tipo)
     {
-        user = new Usuario(newIdUser(),nome,username,senha);
+        user = new Usuario(newIdUser(),nome,username,senha,tipo);
         if (listUser.add(user)==true)
         {
             System.out.println("Usuario Cadastrado!");
@@ -20,21 +20,21 @@ public class UsuarioController {
         return false;
 
     }
-    public boolean validarUsuario(String username, String passeword)
+    public Usuario validarUsuario(String username, String passeword)
     {
-        boolean result = false;
+        Usuario result = null;
 
 
         for (var use : listUser )
         {
             if (use.getUsername().equalsIgnoreCase(username) && use.getSenha().equalsIgnoreCase(passeword))
             {
-                result = true;
+                result = use;
 
             }
             else
             {
-                result = false;
+                result = null;
             }
 
         }

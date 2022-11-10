@@ -1,7 +1,5 @@
 package projetoIntegrador.model;
 
-import projetoIntegrador.repository.VeiculoRepository;
-
 public class Carro extends Veiculo {
 
         private String tracao;
@@ -23,8 +21,8 @@ public class Carro extends Veiculo {
         this.motor = motor;
     }
 
-    public Carro(int id, String placa, String cor, String modelo, int ano, String combustivel) {
-            super(id, placa, cor, modelo, ano, combustivel);
+    public Carro(int id, String placa, String cor, String modelo,float valor, int ano,float motor,String tracao,int status) {
+            super(id, placa, cor, modelo, valor, ano, status);
 
             this.tracao = tracao;
             this.motor = motor;

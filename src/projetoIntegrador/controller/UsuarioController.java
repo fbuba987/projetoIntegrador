@@ -2,21 +2,49 @@ package projetoIntegrador.controller;
 
 import projetoIntegrador.model.Usuario;
 
+import java.util.ArrayList;
+
 public class UsuarioController {
     public Usuario user;
 
-    public void adicionarUsuario(long in_user, String nome, String username, String senha)
+    private ArrayList<Usuario>listUser=new ArrayList<Usuario>();
+
+    public boolean adicionarUsuario( String nome, String username, String senha)
     {
-        user = new Usuario(in_user,nome,username,senha);
-        user.adicionar(user);
+        user = new Usuario(newIdUser(),nome,username,senha);
+        if (listUser.add(user)==true)
+        {
+            System.out.println("Usuario Cadastrado!");
+            return  true;
+        }
+        return false;
 
     }
-    public boolean validarUsuario(String usename, String passeword)
+    public boolean validarUsuario(String username, String passeword)
     {
+        boolean result = false;
 
-        var result =  user.validar(usename,passeword);
+
+        for (var use : listUser )
+        {
+            if (use.getUsername().equalsIgnoreCase(username) && use.getSenha().equalsIgnoreCase(passeword))
+            {
+                result = true;
+
+            }
+            else
+            {
+                result = false;
+            }
+
+        }
+
         return result;
 
+    }
+    public int newIdUser()
+    {
+        return listUser.size()+1;
     }
 
 }

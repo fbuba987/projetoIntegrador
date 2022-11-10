@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Usuario {
 
-   private long in_user;
+   private int in_user;
    private String nome;
    private String username;
    private String senha;
@@ -20,7 +20,7 @@ public class Usuario {
 
     private    ArrayList<Usuario> listUser = new ArrayList<Usuario>();
 
-    public Usuario(long in_user, String nome, String username, String senha) {
+    public Usuario(int in_user, String nome, String username, String senha) {
         this.in_user = in_user;
         this.nome = nome;
         this.username = username;
@@ -29,7 +29,39 @@ public class Usuario {
 
     }
 
-        public void adicionar(Usuario user){
+    public long getIn_user() {
+        return in_user;
+    }
+
+    public void setIn_user(int in_user) {
+        this.in_user = in_user;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public void adicionar(Usuario user){
             String result = "";
             if (user != null)
             {
@@ -43,18 +75,5 @@ public class Usuario {
             System.out.println(result);
 
         }
-        public boolean validar(String username2, String password){
-        boolean validador = false;
-            for (Usuario use : getListUser() )
-            {
-                if (use.username == username2 && use.senha == password)
-                {
-                    validador = true;
-                }
-
-            }
-            return validador;
-
-
-        }
+        public ArrayList<Usuario> listar (){return  listUser;}
 }

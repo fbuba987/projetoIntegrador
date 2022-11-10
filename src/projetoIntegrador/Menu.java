@@ -18,13 +18,27 @@ public class Menu {
     Usuario usuario;
 
     public static void main(String[] args) {
-        veiculoController.cadastrar(new Veiculo(veiculoController.newId(),
+        veiculoController.cadastrar(new Carro(veiculoController.newId(),
                 "355fv",
-                "verde",
-                "monza",
+                "Laranja",
+                "Corssel",
                 100.0f,
-                2022,
-                0) {});
+                1989,
+                100.0f,"Não informado",0) {});
+        veiculoController.cadastrar(new Carro(veiculoController.newId(),
+                "355fv",
+                "Preto",
+                "Impala",
+                100.0f,
+                1969,
+                170.0f,"Não informado",0) {});
+        veiculoController.cadastrar(new Carro(veiculoController.newId(),
+                "355fv",
+                "Prata",
+                "Opala Comodoro",
+                100.0f,
+                1982,
+                110.0f,"Não informado",0) {});
         usuarioController.adicionarUsuario(
                 "Administrator",
                 "admin",
@@ -72,13 +86,16 @@ public class Menu {
         user = usuarioController.validarUsuario(username, senha);
         if( user !=null)
         {
-            System.out.println("\n1 - Listar Veiculos ");
-            read.skip("\\R? 2- Voltar ao Menu Principal");
+            System.out.println(Cores.TEXT_BLUE+"\n1"+Cores.TEXT_RESET+" - Ver Lista de Veiculos ");
+            System.out.println(Cores.TEXT_BLUE+"\n2"+Cores.TEXT_RESET+" - Cadastrar Novo Veiculo ");
+            System.out.println(Cores.TEXT_BLUE+"\n3"+Cores.TEXT_RESET+" - Voltar ao Menu Principal ");
+            read.skip("\\R?");
             var opt = read.nextInt();
             switch (opt)
             {
                 case 1 ->{ veiculoController.listarVeiculos();}
-                case 2 ->{menuPrincipal();}
+                case 2 ->{ cadastrarVeiculo();}
+                case 3 ->{menuPrincipal();}
             }
 
         }
@@ -90,9 +107,9 @@ public class Menu {
     {
         int entrada;
 
-        System.out.println(Cores.TEXT_BLUE_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND + "------------------------------------- ");
+        System.out.println(Cores.TEXT_BLUE_BOLD_BRIGHT +  "------------------------------------- ");
         System.out.println(" |                                  | ");
-        System.out.println(" |    Bem vindo(a) a easy facility  | ");
+        System.out.println(" |    Bem vindo(a) a Easy Facility  | ");
         System.out.println(" |                                  | ");
         System.out.println("------------------------------------- ");
         System.out.println(" |                                  | ");
@@ -144,9 +161,11 @@ public class Menu {
             }
             case 5 -> {
                 System.out.println("\nAlugar carro");
+                locar();
             }
             case 6 -> {
                 System.out.println("\nSair");
+                System.exit(0);
             }
 
 
@@ -157,12 +176,12 @@ public class Menu {
     public static void cadastrar()
     {
         int menuCadastro;
-        System.out.println("7 - Cadastrar Veiculo");
-        System.out.println("8 - Cadastrar Usuário");
+        System.out.println(Cores.TEXT_BLUE+"\n7"+Cores.TEXT_RESET+" - Cadastrar Veiculo");
+        System.out.println(Cores.TEXT_BLUE+"\n8"+Cores.TEXT_RESET+" - Cadastrar Usuário");
         menuCadastro = read.nextInt();
         if (user == null)
         {
-            System.out.println("Somente o Administrador pode efetuar cadastro");
+            System.out.println(Cores.TEXT_YELLOW+"Somente o Administrador pode efetuar cadastro"+Cores.TEXT_RESET);
             login();
         }
         if (menuCadastro == 7 && user.getTipo() == 1 )
@@ -182,8 +201,8 @@ public class Menu {
      public static void cadastrarVeiculo()
     {
 
-        System.out.println("\n1 - Carro: ");
-        System.out.println("\n2 - Moto: ");
+        System.out.println(Cores.TEXT_BLUE+"\n1"+Cores.TEXT_RESET+" - Carro: ");
+        System.out.println(Cores.TEXT_BLUE+"\n2"+Cores.TEXT_RESET+" - Moto: ");
         read.skip("\\R?");
         var opt = read.nextInt();
         switch (opt)
@@ -215,11 +234,11 @@ public class Menu {
                 read.skip("\\R?");
                 var motor = read.nextFloat();
 
-                System.out.println("\ntração: ");
+                System.out.println("\nTração: ");
                 read.skip("\\R?");
                 var tracao = read.nextLine();
 
-                System.out.println("\nCombustivel: ");
+                System.out.println("\nStatus: ");
                 read.skip("\\R?");
                 var status = read.nextInt();
                 veiculoController.cadastrar(new Carro(
@@ -283,9 +302,9 @@ public class Menu {
 
 
         int result ;
-        System.out.println("\n9 - voltar ao menu Principal: ");
-        System.out.println("\n10 - Novo Cadastro: ");
-        System.out.println("\n 11 - Sair");
+        System.out.println(Cores.TEXT_BLUE+"\n9"+Cores.TEXT_RESET+" - voltar ao menu Principal: ");
+        System.out.println(Cores.TEXT_BLUE+"\n10"+Cores.TEXT_RESET+" - Novo Cadastro: ");
+        System.out.println(Cores.TEXT_BLUE+"\n11"+Cores.TEXT_RESET+" - Sair");
         read.skip("\\R?");
         result  = read.nextInt();
         switch (result)
@@ -302,11 +321,11 @@ public class Menu {
     public static void listar()
     {
         veiculoController.listarVeiculos();
-        System.out.println(Cores.TEXT_BLUE+"DIGITE O NÚMERODA OPÇÃO DESEJADA!");
+        System.out.println(Cores.TEXT_BLUE+"DIGITE O NÚMERODA OPÇÃO DESEJADA!"+Cores.TEXT_RESET);
         int result ;
-        System.out.println("\n1 - Voltar ao menu Principal: ");
-        System.out.println("\n2 - Locar veiculo: ");
-        System.out.println("\n 3 - Sair");
+        System.out.println(Cores.TEXT_BLUE+"\n1"+Cores.TEXT_RESET+" - Voltar ao menu Principal: ");
+        System.out.println(Cores.TEXT_BLUE+"\n2"+Cores.TEXT_RESET+" - Locar veiculo: ");
+        System.out.println(Cores.TEXT_BLUE+"\n3"+Cores.TEXT_RESET+" - Sair");
         read.skip("\\R?");
         result  = read.nextInt();
         switch (result)
@@ -321,13 +340,17 @@ public class Menu {
     {
         veiculoController.listarVeiculosModelo();
 
-        System.out.println("DIGITE O NÚMERO DA OPÇÃO DESEJADA!");
+        System.out.println(Cores.TEXT_BLUE+"DIGITE O NÚMERO DA OPÇÃO DESEJADA!"+Cores.TEXT_RESET);
         read.skip("\\R?");
         var id  = read.nextInt();
 
         System.out.println("\nQuantidades de Diárias: ");
         read.skip("\\R?");
-        var diaria  = read.nextInt();
+        var diaria  = read.nextFloat();
+
+        System.out.println("\nValor da Diária: ");
+        read.skip("\\R?");
+        var valorDiaria  = read.nextFloat();
 
         System.out.println("\nData Checkin: ");
         read.skip("\\R?");
@@ -337,7 +360,7 @@ public class Menu {
         read.skip("\\R?");
         var entrega  = read.nextLine();
 
-        veiculoController.locar(id,diaria,saida,entrega);
+        veiculoController.locar(id,diaria,valorDiaria,saida,entrega);
     }
 
 }

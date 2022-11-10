@@ -2,6 +2,7 @@ package projetoIntegrador.controller;
 
 import projetoIntegrador.model.Veiculo;
 import projetoIntegrador.repository.VeiculoRepository;
+import projetoIntegrador.util.Cores;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -18,7 +19,10 @@ public class VeiculoController implements VeiculoRepository {
 
         for (var veiculo : listVeiculos)
         {
+            System.out.println(Cores.TEXT_BLUE+"----------------------------------------------------------------------------"+Cores.TEXT_RESET);
             veiculo.listar();
+            System.out.println(Cores.TEXT_BLUE+"----------------------------------------------------------------------------"+Cores.TEXT_RESET);
+
         }
 
     }
@@ -31,7 +35,6 @@ public class VeiculoController implements VeiculoRepository {
             System.out.println("---------------------------------------------------------------------------");
 
         }
-
     }
 
     @Override
@@ -60,13 +63,13 @@ public class VeiculoController implements VeiculoRepository {
             }
         }
     }
-    public void locar(int id,float diaria,String checkin, String checkout) {
+    public void locar(int id,float diaria,float valorDiaria,String checkin, String checkout) {
         for (var veiculo : listVeiculos)
         {
             if (veiculo.getId() == id)
             {
                 System.out.println("---------------------------------------------------------------------------");
-                System.out.println("Modelo : "+veiculo.getModelo()+"\n Valor Diária: "+diaria+"\n Data de Saída : "+checkin+"\n Data de Entrega : "+checkout);
+                System.out.println("Modelo : "+veiculo.getModelo()+"\n Valor Diária: "+diaria+"\n Data de Saída : "+checkin+"\n Data de Entrega : "+checkout+"\nValor Total: "+diaria*valorDiaria);
                 System.out.println("---------------------------------------------------------------------------");
 
                 try {
@@ -80,7 +83,7 @@ public class VeiculoController implements VeiculoRepository {
                     pw.print("\n");
                     pw.print("\n");
                     pw.print("\n");
-                    pw.print("Modelo : "+veiculo.getModelo()+"\n Valor Diária: "+diaria+"\n Data de Saída : "+checkin+"\n Data de Entrega : "+checkout);
+                    pw.print("Modelo : "+veiculo.getModelo()+"\n Valor Diária: "+diaria+"\n Data de Saída : "+checkin+"\n Data de Entrega : "+checkout+"\nValor Total: "+diaria*valorDiaria);
                     pw.close();
 
                 }   catch (IOException ex) {
@@ -89,7 +92,6 @@ public class VeiculoController implements VeiculoRepository {
                 veiculo.setStatus(1);
                 listVeiculos.set(listVeiculos.indexOf(veiculo),veiculo);
                 listarVeiculosModelo();
-
 
             }
         }

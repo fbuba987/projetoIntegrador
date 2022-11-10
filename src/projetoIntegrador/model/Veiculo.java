@@ -76,11 +76,11 @@ public abstract class Veiculo {
     public String getStatusliteral() {
         if(getStatus() == 0)
         {
-            return Cores.TEXT_GREEN+"Disponivel";
+            return Cores.TEXT_GREEN+"Disponivel"+Cores.TEXT_RESET;
         }
         else
         {
-            return Cores.TEXT_RED+"Idisponivel";
+            return Cores.TEXT_RED+"Idisponivel"+Cores.TEXT_RESET;
         }
     }
 
@@ -89,15 +89,15 @@ public abstract class Veiculo {
     }
 
     public void listar(){
-        System.out.println(getId());
-        System.out.println("Placa: "+getPlaca());
-        System.out.println("Modelo: "+getModelo());
-        System.out.println("Ano"+getAno());
-        System.out.println("Cor: "+getCor());
+        System.out.println(Cores.TEXT_BLUE_BOLD_BRIGHT+getId()+Cores.TEXT_RESET);
+        System.out.println(Cores.TEXT_YELLOW+"Placa: "+Cores.TEXT_RESET+getPlaca());
+        System.out.println(Cores.TEXT_YELLOW+"Modelo: "+Cores.TEXT_RESET+getModelo());
+        System.out.println(Cores.TEXT_YELLOW+"Ano: "+Cores.TEXT_RESET+getAno());
+        System.out.println(Cores.TEXT_YELLOW+"Cor: "+Cores.TEXT_RESET+getCor());
         if (getStatus() == 0)
-            System.out.println("Status:"+ getStatusliteral());
+            System.out.println(Cores.TEXT_YELLOW+"Status:"+Cores.TEXT_RESET+ getStatusliteral());
         else
-            System.out.println("Status: "+getStatusliteral());
+            System.out.println(Cores.TEXT_YELLOW+"Status: "+Cores.TEXT_RESET+getStatusliteral());
 
     }
 

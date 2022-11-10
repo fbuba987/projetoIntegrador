@@ -1,5 +1,7 @@
 package projetoIntegrador.model;
 
+import projetoIntegrador.util.Cores;
+
 public class Moto extends Veiculo{
 
     private int  capacete;
@@ -31,7 +33,7 @@ public class Moto extends Veiculo{
     @Override
     public void listar() {
         super.listar();
-        System.out.println("Quantidades de Capacete: "+getCapacete());
-        System.out.println("Cilindradas: "+getCilindradas());
+        System.out.println(Cores.TEXT_YELLOW+"Quantidades de Capacete: "+Cores.TEXT_RESET+getCapacete());
+        System.out.println(Cores.TEXT_YELLOW+"Cilindradas: "+Cores.TEXT_RESET+getCilindradas());
     }
 }

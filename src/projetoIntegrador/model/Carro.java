@@ -1,5 +1,7 @@
 package projetoIntegrador.model;
 
+import projetoIntegrador.util.Cores;
+
 public class Carro extends Veiculo {
 
         private String tracao;
@@ -31,8 +33,8 @@ public class Carro extends Veiculo {
     @Override
     public void listar() {
         super.listar();
-        System.out.println("Tração: "+getTracao());
-        System.out.println("Motor: "+getMotor());
+        System.out.println(Cores.TEXT_YELLOW+"Tração: "+Cores.TEXT_RESET+getTracao());
+        System.out.println(Cores.TEXT_YELLOW+"Motor: "+Cores.TEXT_RESET+getMotor());
     }
 }
 
